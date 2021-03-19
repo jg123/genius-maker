@@ -6,7 +6,6 @@ function App() {
   useEffect(() => {
     setWords(checkWords());
   }, []);
-  console.log("🚀 ~ file: App.js ~ line 7 ~ App ~ words", words);
   return (
     <>
       <h1>Genius Maker</h1>
