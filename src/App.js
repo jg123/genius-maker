@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import checkWords from "./checkWords";
 
 function App() {
+  const [words, setWords] = useState([]);
+  useEffect(() => {
+    setWords(checkWords());
+  }, []);
+  console.log("🚀 ~ file: App.js ~ line 7 ~ App ~ words", words);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React now
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Genius Maker</h1>
+      <ol>
+        {words.map(word => (
+          <li>{word}</li>
+        ))}
+      </ol>
+    </>
   );
 }
 
