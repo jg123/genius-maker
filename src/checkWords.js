@@ -38,7 +38,6 @@ const checkWords = () => {
       matchingWords.push(result);
     }
   });
-  console.log("🚀 ~ file: checkWords.js ~ line 41 ~ words5.forEach ~ matchingWords", matchingWords);
   return matchingWords;  
 }
 
