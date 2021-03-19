@@ -32,31 +32,31 @@ function App() {
       >
         <div>
           <label>Required letter</label>
-          <input type="text" name="requiredLetter" onChange={handleChange} />
+          <input type="text" name="requiredLetter" onChange={handleChange} autoCapitalize="off" />
         </div>
         <div>
           <label>letter 2</label>
-          <input type="text" name="letter2" onChange={handleChange} />
+          <input type="text" name="letter2" onChange={handleChange} autoCapitalize="off" />
         </div>
         <div>
           <label>Letter 3</label>
-          <input type="text" name="letter3" onChange={handleChange} />
+          <input type="text" name="letter3" onChange={handleChange} autoCapitalize="off" />
         </div>
         <div>
           <label>Letter 4</label>
-          <input type="text" name="letter4" onChange={handleChange} />
+          <input type="text" name="letter4" onChange={handleChange} autoCapitalize="off" />
         </div>
         <div>
           <label>Letter 5</label>
-          <input type="text" name="letter5" onChange={handleChange} />
+          <input type="text" name="letter5" onChange={handleChange} autoCapitalize="off" />
         </div>
         <div>
           <label>Letter 6</label>
-          <input type="text" name="letter6" onChange={handleChange} />
+          <input type="text" name="letter6" onChange={handleChange} autoCapitalize="off" />
         </div>
         <div>
           <label>Letter 7</label>
-          <input type="text" name="letter7" onChange={handleChange} />
+          <input type="text" name="letter7" onChange={handleChange} autoCapitalize="off" />
         </div>
         <input type="submit" />
       </form>
