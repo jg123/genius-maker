@@ -1,5 +1,4 @@
-import words5 from "./words5.json"
-
+import words5 from "./words5.json";
 
 const letterLocation = (line, letter, wordCheck) => {
   let locations = [];
@@ -20,7 +19,7 @@ const checkWord = (line, requiredLetter, ...restOfLetters) => {
     return;
   }
   letterLocation(line, requiredLetter, wordCheck);
-  
+
   for (let index = 0; index < restOfLetters.length; index++) {
     const letter = restOfLetters[index];
     letterLocation(line, letter, wordCheck);
@@ -30,15 +29,24 @@ const checkWord = (line, requiredLetter, ...restOfLetters) => {
   }
 };
 
-const checkWords = () => {
+const checkWords = letters => {
   let matchingWords = [];
-  words5.forEach((word) => {
-    const result = checkWord(word, "l", "w", "r", "i", "n", "k", "e");
+  words5.forEach(word => {
+    const result = checkWord(
+      word,
+      letters["requiredLetter"],
+      letters["letter2"],
+      letters["letter3"],
+      letters["letter4"],
+      letters["letter5"],
+      letters["letter6"],
+      letters["letter7"]
+    );
     if (result) {
       matchingWords.push(result);
     }
   });
-  return matchingWords;  
-}
+  return matchingWords;
+};
 
 export default checkWords;
