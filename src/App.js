@@ -60,7 +60,7 @@ function App() {
           <label class="text-label" for="letter7">Letter 7</label>
           <input type="text" name="letter7" id="letter7" onChange={handleChange} class="text-input" autoCapitalize="off" />
         </div>
-        <input type="submit" />
+        <input class="submit-button" type="submit" />
       </form>
       <h2>Results:</h2>
       <ol>
