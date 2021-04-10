@@ -13,15 +13,14 @@ const letterLocation = (line, letter, wordCheck) => {
   }
 };
 
-const checkWord = (line, requiredLetter, ...restOfLetters) => {
+const checkWord = (line, letters, requiredLetters) => {
   const wordCheck = [];
-  if (line.indexOf(requiredLetter) === -1) {
-    return;
-  }
-  letterLocation(line, requiredLetter, wordCheck);
 
-  for (let index = 0; index < restOfLetters.length; index++) {
-    const letter = restOfLetters[index];
+  for (let index = 0; index < letters.length; index++) {
+    if (requiredLetters[index] && line.indexOf(letters[index]) === -1) {
+      return;
+    }
+    const letter = letters[index];
     letterLocation(line, letter, wordCheck);
   }
   if (line === wordCheck.join("")) {
@@ -29,18 +28,13 @@ const checkWord = (line, requiredLetter, ...restOfLetters) => {
   }
 };
 
-const checkWords = letters => {
+const checkWords = (letters, requiredLetters) => {
   let matchingWords = [];
   words5.forEach(word => {
     const result = checkWord(
       word,
-      letters["requiredLetter"],
-      letters["letter2"],
-      letters["letter3"],
-      letters["letter4"],
-      letters["letter5"],
-      letters["letter6"],
-      letters["letter7"]
+      letters,
+      requiredLetters
     );
     if (result) {
       matchingWords.push(result);
