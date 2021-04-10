@@ -17,14 +17,15 @@ function App() {
   ]);
   const [changed, setChanged] = useState(false);
   const [toggleRequired, setToggleRequired] = useState(null);
+  const [matchLength, setMatchLength] = useState(false);
   const [words, setWords] = useState([]);
 
   useEffect(() => {
     if (changed) {
-      setWords(checkWords(letters, requiredLetters));
+      setWords(checkWords(letters, requiredLetters, matchLength));
     }
     setChanged(false);
-  }, [letters, requiredLetters, changed]);
+  }, [letters, requiredLetters, matchLength, changed]);
 
   const handleLetterChange = (event, index) => {
     setTempLetters(tempLetters => [
@@ -127,6 +128,17 @@ function App() {
         }}
       >
         {Rows}
+        <input
+          className="match-length-checkbox"
+          type="checkbox"
+          onChange={() => setMatchLength(!matchLength)}
+          checked={matchLength}
+          id="match-length"
+          name="match-length"
+        />
+        <label className="match-length-label" htmlFor={`match-length`}>
+          Match input/output word length
+        </label>
         <input className="submit-button" type="submit" />
       </form>
       <h2>Results:</h2>
