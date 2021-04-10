@@ -58,3 +58,11 @@ form {
 .required-label {
   margin-inline-start: 0.1rem;
 }
+
+.match-length-checkbox {
+  margin: 1rem 0 1rem 2.4rem;
+}
+
+.match-length-label {
+  margin-inline-start: 0.5rem;
+}
